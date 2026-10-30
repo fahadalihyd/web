@@ -1,3 +1,6 @@
+/** Public assets (respects Vite `base`, e.g. `/web/` on GitHub Pages). */
+const asset = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\//, '')}`
+
 export const profile = {
   name: 'Fahad Ali',
   firstName: 'Fahad',
@@ -14,8 +17,8 @@ export const profile = {
   email: 'fahadalihyd2@gmail.com',
   phone: '+92-305-3041408',
   phoneHref: '+923053041408',
-  photo: '/images/fahad.png',
-  resume: '/Fahad_Ali_Resume.pdf',
+  photo: asset('/images/fahad.png'),
+  resume: asset('/Fahad_Ali_Resume.pdf'),
   github: 'https://github.com/',
   linkedin: 'https://www.linkedin.com/',
   summary:
@@ -217,8 +220,8 @@ export const projects: Project[] = [
     aiPowered: true,
     role: 'Owner',
     url: 'https://ordersswift.com/',
-    image: '/images/projects/orderswift.jpg',
-    imageFull: '/images/projects/orderswift-full.jpg',
+    image: asset('/images/projects/orderswift.jpg'),
+    imageFull: asset('/images/projects/orderswift-full.jpg'),
     description:
       'Multi-tenant e-commerce platform for Pakistani sellers: branded stores, cash-on-delivery checkout, one-tap WhatsApp updates, POS, and AI that turns chats into orders.',
   },
@@ -229,8 +232,8 @@ export const projects: Project[] = [
     showcase: true,
     aiPowered: true,
     url: 'https://monily-v2.vercel.app/',
-    image: '/images/projects/monily.jpg',
-    imageFull: '/images/projects/monily-full.jpg',
+    image: asset('/images/projects/monily.jpg'),
+    imageFull: asset('/images/projects/monily-full.jpg'),
     description:
       'Outsourced finance platform with an AI-driven Growth Score dashboard, real-time financial intelligence and cash-flow forecasting for bookkeeping, tax and CFO advisory.',
   },
@@ -240,8 +243,8 @@ export const projects: Project[] = [
     categories: ['AI', 'Laravel', 'Vue'],
     showcase: true,
     url: 'https://beyondlimitstechnologies.com/',
-    image: '/images/projects/beyond-limits.jpg',
-    imageFull: '/images/projects/beyond-limits-full.jpg',
+    image: asset('/images/projects/beyond-limits.jpg'),
+    imageFull: asset('/images/projects/beyond-limits-full.jpg'),
     description:
       'Enterprise IT solutions partner and hardware storefront for new and certified refurbished servers, storage and networking, with quote requests and order tracking.',
   },
