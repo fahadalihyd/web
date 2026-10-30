@@ -5,16 +5,16 @@ import { scrollToTarget } from '../hooks/useLenis'
 
 export default function Footer() {
   return (
-    <footer className="relative border-t border-white/10 bg-black/20 backdrop-blur-md">
+    <footer className="relative border-t border-line bg-deep/40 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-8 px-6 py-10 md:flex-row">
         <div className="text-center md:text-left">
           <p className="font-display text-2xl font-bold">
             <span className="text-accent-soft">Fahad Ali</span>
           </p>
-          <p className="mt-1 text-sm text-white/45">Senior Full Stack Developer &middot; AI Agents Engineer</p>
+          <p className="mt-1 text-sm text-ink/45">{profile.footerLine}</p>
         </div>
 
-        <ul className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-white/55">
+        <ul className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-ink/55">
           {navLinks.map((l) => (
             <li key={l.href}>
               <a
@@ -43,7 +43,7 @@ export default function Footer() {
               target={s.name === 'mail' ? undefined : '_blank'}
               rel="noreferrer"
               aria-label={s.label}
-              className="flex h-11 w-11 items-center justify-center rounded-full border border-white/15 text-white/60 transition-all hover:-translate-y-1 hover:border-accent hover:text-accent-soft"
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-line text-ink/60 transition-all hover:-translate-y-1 hover:border-accent hover:text-accent-soft"
             >
               <Icon name={s.name} width={18} height={18} />
             </a>
@@ -56,7 +56,7 @@ export default function Footer() {
           </MagneticButton>
         </div>
       </div>
-      <p className="border-t border-white/5 py-5 text-center text-xs text-white/35">
+      <p className="border-t border-line/60 py-5 text-center text-xs text-ink/35">
         &copy; {new Date().getFullYear()} Fahad Ali. Crafted with React, Three.js &amp; GSAP.
       </p>
     </footer>

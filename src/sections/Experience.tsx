@@ -74,7 +74,7 @@ export default function Experience() {
 
       <div ref={wrap} className="relative">
         {/* track + glowing progress line */}
-        <div className="absolute left-5 top-0 h-full w-[2px] -translate-x-1/2 rounded bg-white/10 md:left-1/2" />
+        <div className="absolute left-5 top-0 h-full w-[2px] -translate-x-1/2 rounded bg-overlay/10 md:left-1/2" />
         <div ref={line} className="timeline-line absolute left-5 top-0 h-full w-[2px] origin-top -translate-x-1/2 rounded md:left-1/2" />
 
         <div className="space-y-16 md:space-y-24">
@@ -91,16 +91,16 @@ export default function Experience() {
                     <div className="mb-1 flex flex-wrap items-center gap-3">
                       <span className="rounded-full border border-accent/40 bg-accent/10 px-3 py-1 text-xs font-medium text-accent-soft">{job.period}</span>
                       {job.current && (
-                        <span className="rounded-full bg-accent px-3 py-1 text-[10px] font-semibold uppercase tracking-wider">
+                        <span className="rounded-full bg-accent px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-white">
                           Current
                         </span>
                       )}
                     </div>
                     <h3 className="mt-4 font-display text-2xl font-bold">{job.role}</h3>
                     <p className="text-accent-soft mb-5 font-display text-lg font-medium">
-                      {job.company} <span className="text-white/40">/ {job.location}</span>
+                      {job.company} <span className="text-ink/40">/ {job.location}</span>
                     </p>
-                    <ul className="exp-points space-y-2.5 text-sm leading-relaxed text-white/65">
+                    <ul className="exp-points space-y-2.5 text-sm leading-relaxed text-ink/65">
                       {job.points.map((p) => (
                         <li key={p} className="flex gap-3">
                           <span className="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-accent" />
@@ -108,7 +108,7 @@ export default function Experience() {
                         </li>
                       ))}
                     </ul>
-                    <div className="mt-6 flex flex-wrap gap-2 border-t border-white/10 pt-5">
+                    <div className="mt-6 flex flex-wrap gap-2 border-t border-line pt-5">
                       {job.tech.map((t) => (
                         <span key={t} className="pill">
                           {t}

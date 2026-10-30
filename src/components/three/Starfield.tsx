@@ -1,6 +1,7 @@
 import { useMemo, useRef } from 'react'
 import { useFrame } from '@react-three/fiber'
 import * as THREE from 'three'
+import { scenePalette, useTheme } from '../../theme/ThemeProvider'
 
 interface Props {
   count?: number
@@ -11,6 +12,7 @@ interface Props {
 /** Sparse slate dust for depth; deliberately subtle. */
 export default function Starfield({ count = 300, radius = 12, size = 0.035 }: Props) {
   const ref = useRef<THREE.Points>(null)
+  const { theme } = useTheme()
 
   const positions = useMemo(() => {
     const positions = new Float32Array(count * 3)
@@ -35,7 +37,7 @@ export default function Starfield({ count = 300, radius = 12, size = 0.035 }: Pr
       <bufferGeometry>
         <bufferAttribute attach="attributes-position" args={[positions, 3]} />
       </bufferGeometry>
-      <pointsMaterial color="#94a3b8" size={size} sizeAttenuation transparent opacity={0.45} depthWrite={false} />
+      <pointsMaterial color={scenePalette[theme].star} size={size} sizeAttenuation transparent opacity={0.45} depthWrite={false} />
     </points>
   )
 }

@@ -26,13 +26,13 @@ function CopyCard({ icon, label, value, href }: { icon: string; label: string; v
         <Icon name={icon} />
       </span>
       <a href={href} className="min-w-0 flex-1">
-        <p className="text-xs uppercase tracking-widest text-white/40">{label}</p>
-        <p className="truncate font-medium text-white/90">{value}</p>
+        <p className="text-xs uppercase tracking-widest text-ink/40">{label}</p>
+        <p className="truncate font-medium text-ink/90">{value}</p>
       </a>
       <button
         onClick={copy}
         aria-label={`Copy ${label}`}
-        className="flex h-10 w-10 flex-none items-center justify-center rounded-full border border-white/15 text-white/60 transition-colors hover:border-accent hover:text-accent-soft"
+        className="flex h-10 w-10 flex-none items-center justify-center rounded-full border border-line text-ink/60 transition-colors hover:border-accent hover:text-accent-soft"
       >
         <Icon name={copied ? 'check' : 'copy'} width={18} height={18} />
       </button>
@@ -51,7 +51,7 @@ export default function Contact() {
   }
 
   const field =
-    'w-full rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-4 text-sm text-white placeholder-white/30 outline-none transition-all focus:border-accent/70 focus:bg-white/[0.06]'
+    'w-full rounded-2xl border border-line bg-overlay/[0.04] px-5 py-4 text-sm text-ink placeholder-ink/30 outline-none transition-all focus:border-accent/70 focus:bg-overlay/[0.08]'
 
   return (
     <section id="contact" className="relative overflow-hidden py-28 md:py-40">
@@ -88,8 +88,8 @@ export default function Contact() {
                     <Icon name="pin" />
                   </span>
                   <div>
-                    <p className="text-xs uppercase tracking-widest text-white/40">Location</p>
-                    <p className="font-medium text-white/90">{profile.location}</p>
+                    <p className="text-xs uppercase tracking-widest text-ink/40">Location</p>
+                    <p className="font-medium text-ink/90">{profile.location}</p>
                   </div>
                 </div>
               </Reveal>
@@ -100,7 +100,7 @@ export default function Contact() {
           <Reveal x={50} y={0}>
             <form onSubmit={submit} className="glass glass-glow space-y-5 p-8 md:p-10">
               <h3 className="font-display text-2xl font-bold">Send me a message</h3>
-              <p className="text-sm text-white/50">Tell me about your project, I usually reply within a day.</p>
+              <p className="text-sm text-ink/50">Tell me about your project, I usually reply within a day.</p>
               <input
                 required
                 className={field}

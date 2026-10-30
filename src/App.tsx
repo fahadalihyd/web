@@ -13,6 +13,7 @@ import Awards from './sections/Awards'
 import Contact from './sections/Contact'
 import Footer from './sections/Footer'
 import Marquee from './components/ui/Marquee'
+import { ThemeProvider } from './theme/ThemeProvider'
 
 export default function App() {
   const [loaded, setLoaded] = useState(false)
@@ -29,7 +30,7 @@ export default function App() {
   }, [loaded])
 
   return (
-    <>
+    <ThemeProvider>
       <div className="bg-mesh" />
       <div className="bg-grid" />
       <div className="bg-noise" />
@@ -48,6 +49,6 @@ export default function App() {
         <Contact />
       </main>
       <Footer />
-    </>
+    </ThemeProvider>
   )
 }

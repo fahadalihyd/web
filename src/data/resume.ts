@@ -5,26 +5,31 @@ export const profile = {
   name: 'Fahad Ali',
   firstName: 'Fahad',
   lastName: 'Ali',
-  title: 'Senior Full Stack Developer',
-  subtitle: 'AI-Powered Application Development',
+  title: 'AI Solutions Engineer',
+  subtitle: 'Forward Deployed Engineering',
   roles: [
-    'Senior Full Stack Developer',
-    'AI Agents Engineer',
-    'Laravel & Vue Expert',
-    'Cloud & DevOps Builder',
+    'AI Solutions Engineer',
+    'Forward Deployed Engineer',
+    'AI Agents & RAG',
+    'Full-Stack Systems',
   ],
+  tagline:
+    '8+ years building scalable web, SaaS, and AI solutions — from architecture through production — with Laravel, Node.js, React, and agentic systems.',
+  footerLine: 'AI Solutions Engineer · Forward Deployed Engineering',
+  topSkills: ['DevOps', 'Software Architecture', 'Next.js'],
   location: 'Mehmoodabad, Karachi, Pakistan',
   email: 'fahadalihyd2@gmail.com',
   phone: '+92-305-3041408',
   phoneHref: '+923053041408',
   photo: asset('/images/fahad.png'),
+  avatar: asset('/images/avatar.png'),
   resume: asset('/Fahad_Ali_Resume.pdf'),
-  github: 'https://github.com/',
-  linkedin: 'https://www.linkedin.com/',
+  github: 'https://github.com/fahadalihyd',
+  linkedin: 'https://www.linkedin.com/in/fahad-ali-sheikh',
   summary:
-    'Senior Full Stack Developer with 8+ years of experience designing, developing, and deploying scalable web applications across frontend, backend, and cloud environments. Strong expertise in Laravel, PHP, Node.js, JavaScript, Vue.js, React, and RESTful APIs, with hands-on experience in CI/CD, cloud infrastructure (AWS/Azure), database optimization, and system architecture.',
+    "I'm a Senior Software Engineer with 8+ years of experience building and deploying scalable web, SaaS, API-driven, and enterprise applications. My engineering background spans Laravel, PHP, Node.js, React, Vue.js, REST APIs, databases, AWS, Azure, CI/CD, and system architecture. Over the last few years, I've been increasingly focused on AI-powered software and agentic systems — integrating LLMs, AI agents, automation workflows, OCR, and AI APIs into real-world applications.",
   summary2:
-    'Growing specialization in AI automation, AI agents, and agentic application development: building and integrating AI-powered features using OpenAI, N8N automation workflows, and modern AI-assisted development tools (Copilot, Cursor, Claude) to accelerate delivery and enhance product capability. Proven ability to lead and mentor development teams and deliver high-performance SaaS, enterprise, and AI-powered products.',
+    'My focus is evolving toward AI Solutions Engineering and Forward Deployed Engineering: taking ambiguous business problems, understanding the workflow and technical constraints, designing the right solution, rapidly prototyping it, integrating it with existing systems, and taking it into production. I work across the full lifecycle — discovery, architecture, AI and automation, integration, development, deployment, and optimization — including RAG and LLM applications, N8N and GrokBot automation, enterprise APIs, and cloud infrastructure. I also use Cursor, GitHub Copilot, Claude Code, and other AI-assisted tools to accelerate prototyping and delivery.',
 }
 
 export const stats = [
@@ -60,19 +65,31 @@ export const skillCategories = [
   {
     title: 'Cloud & DevOps',
     icon: 'cloud',
-    items: ['AWS', 'Microsoft Azure', 'CI/CD Pipelines', 'GitHub Actions', 'Server Setup & Deployment'],
+    items: [
+      'Software Architecture',
+      'DevOps',
+      'AWS',
+      'Microsoft Azure',
+      'CI/CD Pipelines',
+      'GitHub Actions',
+      'Server Setup & Deployment',
+    ],
   },
   {
     title: 'AI & Automation',
     icon: 'brain',
     featured: true,
     items: [
+      'LLMs',
+      'RAG',
+      'AI Agents',
       'OpenAI',
       'Google Gemini',
       'Anthropic Claude',
-      'AI Agents',
-      'Agentic Development',
+      'OCR',
       'N8N Automation',
+      'GrokBot',
+      'Agentic Development',
       'Prompt Engineering',
     ],
   },
@@ -108,6 +125,10 @@ export const sphereWords = [
   'CI/CD',
   'REST API',
   'AI Agents',
+  'RAG',
+  'LLMs',
+  'OCR',
+  'GrokBot',
   'GitHub',
   'Jira',
   'Cursor',
@@ -132,6 +153,9 @@ export const marqueeItems = [
   'Tailwind CSS',
   'GitHub Actions',
   'AI Agents',
+  'RAG',
+  'LLMs',
+  'GrokBot',
 ]
 
 export const experience = [
@@ -358,16 +382,19 @@ export const awards = [
   { title: 'Employee of the Month', org: 'Dot & Line', year: 'Feb 2022', icon: 'medal' },
 ]
 
-export const certifications = [
-  { title: 'Hugging Face Agents Course', org: 'Hugging Face', status: 'In Progress' },
-  { title: 'Unlocking the Power of ChatGPT: Your New AI Assistant', org: 'Arthur Lawrence', status: 'Completed' },
-  { title: 'Certification in Web Development', org: 'Gexton', status: 'Completed' },
-]
-
 export const education = [
-  { degree: 'Bachelor of Commerce (B.Com)', school: 'University of Sindh, Jamshoro', year: '2016' },
-  { degree: 'Intermediate: Pre-Engineering', school: 'Government Degree College, Hyderabad', year: '2014' },
-  { degree: 'Matriculation: Computer Science', school: 'New Banath Higher Secondary School, Hyderabad', year: '2011' },
+  {
+    degree: 'Bachelor of Commerce (B.Com), Accounting and Computer Science',
+    school: 'University of Sindh, Jamshoro',
+    year: '2014–2016',
+  },
+  {
+    degree: 'Web Development — HTML, CSS3, JavaScript, PHP, MySQL, CodeIgniter, Laravel, WordPress',
+    school: 'Gexton Education',
+    year: '2017–2018',
+  },
+  { degree: 'Pre-Engineering', school: 'Government Degree College, Hyderabad', year: '2012–2014' },
+  { degree: 'Matriculation, Computer Science', school: 'New Banath High School, Hyderabad', year: '2011' },
 ]
 
 export const languages = ['English', 'Urdu']

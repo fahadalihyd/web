@@ -1,6 +1,6 @@
 import { lazy } from 'react'
 import { motion } from 'framer-motion'
-import { skillCategories } from '../data/resume'
+import { profile, skillCategories } from '../data/resume'
 import SceneFrame from '../components/three/SceneFrame'
 import SplitText from '../components/ui/SplitText'
 import Reveal from '../components/ui/Reveal'
@@ -22,7 +22,14 @@ export default function Skills() {
           accentWords={['Technologies']}
         />
         <Reveal delay={0.1}>
-          <p className="mx-auto mt-5 max-w-xl text-white/55">Drag the sphere to explore the stack I use to ship production software.</p>
+          <p className="mx-auto mt-5 max-w-xl text-ink/55">Drag the sphere to explore the stack I use to ship production software.</p>
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-2">
+            {profile.topSkills.map((skill) => (
+              <span key={skill} className="pill">
+                {skill}
+              </span>
+            ))}
+          </div>
         </Reveal>
       </div>
 
@@ -48,7 +55,7 @@ export default function Skills() {
                 }`}
               >
                 {cat.featured && (
-                  <span className="absolute right-5 top-5 rounded-full bg-accent px-3 py-1 text-[10px] font-semibold uppercase tracking-wider">
+                  <span className="absolute right-5 top-5 rounded-full bg-accent px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-white">
                     Specialty
                   </span>
                 )}

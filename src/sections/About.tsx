@@ -36,14 +36,14 @@ export default function About() {
               <div className="glass glass-glow spotlight relative overflow-hidden !rounded-[2rem] p-3">
                 <div className="relative overflow-hidden rounded-[1.5rem]">
                   <img src={profile.photo} alt="Fahad Ali" className="aspect-[4/5] w-full object-cover" loading="lazy" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-void/85 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
                   <div className="holo" />
                   <div className="absolute inset-x-0 bottom-0 flex items-end justify-between p-5">
                     <div>
-                      <p className="font-display text-xl font-semibold">{profile.name}</p>
-                      <p className="text-xs text-white/60">{profile.title}</p>
+                      <p className="font-display text-xl font-semibold text-white">{profile.name}</p>
+                      <p className="text-xs text-white/70">{profile.title}</p>
                     </div>
-                    <span className="rounded-full bg-black/40 px-3 py-1 text-xs text-white/80 backdrop-blur-md">
+                    <span className="rounded-full bg-black/45 px-3 py-1 text-xs text-white/80 backdrop-blur-md">
                       <Icon name="pin" width={12} height={12} className="mr-1 inline -mt-0.5" />
                       Karachi, PK
                     </span>
@@ -59,7 +59,7 @@ export default function About() {
                   className="glass !rounded-2xl px-4 py-3 text-sm"
                 >
                   <span className="text-accent-soft font-display text-xl font-bold">AI</span>
-                  <p className="text-[11px] text-white/60">Agents &amp; Automation</p>
+                  <p className="text-[11px] text-ink/60">Agents &amp; Automation</p>
                 </motion.div>
               </div>
               <div className="absolute -left-4 bottom-24 md:-left-10" style={{ transform: 'translateZ(80px)' }}>
@@ -69,7 +69,7 @@ export default function About() {
                   className="glass !rounded-2xl px-4 py-3 text-sm"
                 >
                   <span className="text-accent-soft font-display text-xl font-bold">8+ yrs</span>
-                  <p className="text-[11px] text-white/60">Full Stack</p>
+                  <p className="text-[11px] text-ink/60">Full Stack</p>
                 </motion.div>
               </div>
             </TiltCard>
@@ -82,15 +82,15 @@ export default function About() {
             <span className="section-label">About me</span>
           </Reveal>
           <SplitText
-            text="Building scalable products, powered by AI."
+            text="From ambiguous problems to production AI."
             className="mt-5 font-display text-4xl font-bold leading-tight md:text-6xl"
             accentWords={['AI']}
           />
           <Reveal delay={0.1}>
-            <p className="mt-8 text-base leading-relaxed text-white/65 md:text-lg">{profile.summary}</p>
+            <p className="mt-8 text-base leading-relaxed text-ink/65 md:text-lg">{profile.summary}</p>
           </Reveal>
           <Reveal delay={0.2}>
-            <p className="mt-5 text-base leading-relaxed text-white/65 md:text-lg">{profile.summary2}</p>
+            <p className="mt-5 text-base leading-relaxed text-ink/65 md:text-lg">{profile.summary2}</p>
           </Reveal>
 
           <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-4">
@@ -100,7 +100,7 @@ export default function About() {
                   <div className="text-accent-soft font-display text-4xl font-bold md:text-5xl">
                     <CountUp to={s.value} suffix={s.suffix} />
                   </div>
-                  <p className="mt-2 text-xs text-white/55">{s.label}</p>
+                  <p className="mt-2 text-xs text-ink/55">{s.label}</p>
                 </div>
               </Reveal>
             ))}

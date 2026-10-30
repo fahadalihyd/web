@@ -3,10 +3,11 @@ import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import * as THREE from 'three'
 import { sphereWords } from '../../data/resume'
 import { useSceneActive } from './active'
+import { scenePalette, useTheme } from '../../theme/ThemeProvider'
 
 const COLORS = ['#93c5fd', '#e2e8f0', '#60a5fa', '#ffffff', '#cbd5e1']
 
-function makeTexture(word: string, color: string) {
+function makeTexture(word: string, color: string, label: string) {
   const w = 512
   const h = 128
   const canvas = document.createElement('canvas')
@@ -22,7 +23,7 @@ function makeTexture(word: string, color: string) {
   ctx.fillStyle = color
   ctx.fillText(word, w / 2, h / 2 + 4)
   ctx.shadowBlur = 0
-  ctx.fillStyle = '#ffffff'
+  ctx.fillStyle = label
   ctx.globalAlpha = 0.9
   ctx.fillText(word, w / 2, h / 2 + 4)
   const tex = new THREE.CanvasTexture(canvas)
@@ -31,7 +32,7 @@ function makeTexture(word: string, color: string) {
   return tex
 }
 
-function Sphere({ radius }: { radius: number }) {
+function Sphere({ radius, label }: { radius: number; label: string }) {
   const group = useRef<THREE.Group>(null)
   const { gl } = useThree()
   const drag = useRef({ down: false, x: 0, y: 0, vx: 0.004, vy: 0 })
@@ -56,10 +57,16 @@ function Sphere({ radius }: { radius: number }) {
         radius * Math.sin(theta) * Math.sin(phi),
         radius * Math.cos(phi),
       )
-      const texture = makeTexture(word, COLORS[i % COLORS.length])
+      const texture = makeTexture(word, COLORS[i % COLORS.length], label)
       return { word, pos, texture }
     })
-  }, [ready, radius])
+  }, [ready, radius, label])
+
+  useEffect(() => {
+    return () => {
+      items.forEach((it) => it.texture.dispose())
+    }
+  }, [items])
 
   useEffect(() => {
     const el = gl.domElement
@@ -110,7 +117,7 @@ function Sphere({ radius }: { radius: number }) {
       {/* glowing core */}
       <mesh>
         <icosahedronGeometry args={[radius * 0.55, 3]} />
-        <meshBasicMaterial color="#475569" wireframe transparent opacity={0.3} />
+        <meshBasicMaterial color={label === '#ffffff' ? '#475569' : '#94a3b8'} wireframe transparent opacity={0.3} />
       </mesh>
       <mesh>
         <sphereGeometry args={[radius * 0.32, 32, 32]} />
@@ -131,6 +138,8 @@ function Sphere({ radius }: { radius: number }) {
 
 export default function SkillSphere() {
   const active = useSceneActive()
+  const { theme } = useTheme()
+  const palette = scenePalette[theme]
   return (
     <Canvas
       className="!absolute inset-0 touch-pan-y cursor-grab active:cursor-grabbing"
@@ -140,8 +149,8 @@ export default function SkillSphere() {
       camera={{ position: [0, 0, 7.2], fov: 45 }}
       gl={{ alpha: true, antialias: true }}
     >
-      <fog attach="fog" args={['#0a0f1c', 6, 11.5]} />
-      <Sphere radius={2.7} />
+      <fog attach="fog" args={[palette.bg, 6, 11.5]} />
+      <Sphere radius={2.7} label={palette.label} />
     </Canvas>
   )
 }

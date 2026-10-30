@@ -4,17 +4,17 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fahad Ali | Senior Full Stack Developer &amp; AI Agents Engineer</title>
+    <title>Fahad Ali | AI Solutions Engineer</title>
     <meta
       name="description"
-      content="Fahad Ali is a Senior Full Stack Developer with 8+ years of experience in Laravel, Node.js, Vue, React, cloud and AI-powered application development."
+      content="Fahad Ali is an AI Solutions Engineer focused on forward-deployed engineering, AI agents, RAG, and full-stack systems with Laravel, Node.js, and React."
     />
     <meta name="theme-color" content="#0a0f1c" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Fahad Ali | Senior Full Stack Developer" />
+    <meta property="og:title" content="Fahad Ali | AI Solutions Engineer" />
     <meta
       property="og:description"
-      content="8+ years building scalable web apps, SaaS and AI-powered products with Laravel, Vue, React, Node.js, AWS and OpenAI."
+      content="8+ years building scalable web, SaaS, and AI solutions — from architecture through production — with Laravel, Node.js, React, and agentic systems."
     />
     <meta property="og:image" content="https://fahadalihyd.github.io/web/images/fahad.png" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -26,6 +26,24 @@
     />
   </head>
   <body>
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('theme')
+          var theme =
+            stored === 'light' || stored === 'dark'
+              ? stored
+              : matchMedia('(prefers-color-scheme: dark)').matches
+                ? 'dark'
+                : 'light'
+          var root = document.documentElement
+          root.dataset.theme = theme
+          root.style.colorScheme = theme
+          var meta = document.querySelector('meta[name="theme-color"]')
+          if (meta) meta.setAttribute('content', theme === 'light' ? '#f4f7fb' : '#0a0f1c')
+        } catch (e) {}
+      })()
+    </script>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

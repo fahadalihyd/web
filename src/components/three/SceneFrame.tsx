@@ -12,6 +12,19 @@ class Boundary extends Component<{ children: ReactNode; fallback: ReactNode }, {
   }
 }
 
+/** Theme-aware CSS poster shown while the scene loads or when WebGL is unavailable. */
+function Poster() {
+  return (
+    <div
+      className="absolute inset-0"
+      style={{
+        background:
+          'radial-gradient(circle at 70% 45%, var(--mesh-glow), transparent 55%), linear-gradient(to bottom, var(--void), var(--deep))',
+      }}
+    />
+  )
+}
+
 interface Props {
   children: ReactNode
   className?: string
@@ -33,9 +46,9 @@ export default function SceneFrame({ children, className = '', initiallyActive =
 
   return (
     <div ref={ref} className={className}>
-      <Boundary fallback={<div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.15),transparent_60%)]" />}>
+      <Boundary fallback={<Poster />}>
         <SceneActiveContext.Provider value={active}>
-          <Suspense fallback={null}>{children}</Suspense>
+          <Suspense fallback={<Poster />}>{children}</Suspense>
         </SceneActiveContext.Provider>
       </Boundary>
     </div>

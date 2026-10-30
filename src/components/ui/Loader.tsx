@@ -38,17 +38,17 @@ export default function Loader({ onDone }: { onDone: () => void }) {
           <span className="font-display text-4xl font-bold text-accent-soft">FA</span>
           <span className="absolute inset-0 rounded-3xl animate-pulse-glow shadow-[0_0_50px_rgba(59,130,246,0.35)]" />
         </motion.div>
-        <div className="font-display text-7xl font-bold tabular-nums text-white md:text-8xl">
+        <div className="font-display text-7xl font-bold tabular-nums text-ink md:text-8xl">
           {String(count).padStart(2, '0')}
           <span className="text-accent-soft text-4xl align-top">%</span>
         </div>
-        <div className="mt-8 h-[2px] w-56 overflow-hidden rounded bg-white/10">
+        <div className="mt-8 h-[2px] w-56 overflow-hidden rounded bg-overlay/10">
           <div
             className="h-full bg-accent transition-[width] duration-100"
             style={{ width: `${count}%` }}
           />
         </div>
-        <p className="mt-4 text-xs uppercase tracking-[0.4em] text-white/40">Initializing experience</p>
+        <p className="mt-4 text-xs uppercase tracking-[0.4em] text-ink/40">Initializing experience</p>
       </div>
     </motion.div>
   )

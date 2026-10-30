@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef } from 'react'
 import { useFrame } from '@react-three/fiber'
 import * as THREE from 'three'
+import { scenePalette, useTheme } from '../../theme/ThemeProvider'
 
 type Variant = 'layers' | 'sphere'
 
@@ -106,7 +107,15 @@ const HOT = new THREE.Color('#60a5fa')
 const PULSE = new THREE.Color('#93c5fd')
 
 export default function NeuralNetwork({ variant = 'layers', mobile = false, position = [0, 0, 0], scale = 1, scrollLinked = false }: Props) {
+  const { theme } = useTheme()
+  const palette = scenePalette[theme]
   const group = useRef<THREE.Group>(null)
+
+  useEffect(() => {
+    BASE.set(palette.base)
+    HOT.set(palette.hot)
+    PULSE.set(palette.pulse)
+  }, [palette])
   const nodeMesh = useRef<THREE.InstancedMesh>(null)
   const pulseMesh = useRef<THREE.InstancedMesh>(null)
 
@@ -240,7 +249,7 @@ export default function NeuralNetwork({ variant = 'layers', mobile = false, posi
       </instancedMesh>
 
       <lineSegments geometry={lineGeo} frustumCulled={false}>
-        <lineBasicMaterial color="#64748b" transparent opacity={mobile ? 0.14 : 0.12} depthWrite={false} />
+        <lineBasicMaterial color={palette.line} transparent opacity={mobile ? 0.22 : 0.16} depthWrite={false} />
       </lineSegments>
 
       <instancedMesh ref={pulseMesh} args={[undefined, undefined, pulseCount]} frustumCulled={false}>

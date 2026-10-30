@@ -77,7 +77,7 @@ function Showcase({ project, index }: { project: Project; index: number }) {
             )}
           </div>
           <h3 className="font-display text-3xl font-bold leading-tight md:text-4xl">{project.name}</h3>
-          <p className="mt-4 text-base leading-relaxed text-white/60">{project.description}</p>
+          <p className="mt-4 text-base leading-relaxed text-ink/60">{project.description}</p>
           <div className="mt-6 flex flex-wrap gap-2">
             {project.tech.map((t) => (
               <span key={t} className="pill !py-1 !text-[11px]">
@@ -115,7 +115,7 @@ export default function Projects() {
         </Reveal>
         <SplitText text="Featured Projects" className="mt-5 font-display text-4xl font-bold md:text-6xl" accentWords={['Projects']} />
         <Reveal delay={0.1}>
-          <p className="mx-auto mt-5 max-w-xl text-white/55">
+          <p className="mx-auto mt-5 max-w-xl text-ink/55">
             {projects.length} products across AI, SaaS, enterprise and mobile backends.
           </p>
         </Reveal>
@@ -126,19 +126,18 @@ export default function Projects() {
         {projectFilters.map((f) => (
           <button
             key={f}
+            type="button"
             onClick={() => setFilter(f)}
-            className={`relative rounded-full px-5 py-2 text-sm font-medium transition-colors ${
-              filter === f ? 'text-white' : 'text-white/55 hover:text-white'
-            }`}
+            className={`project-filter-tab ${filter === f ? 'is-active' : ''}`}
           >
             {filter === f && (
               <motion.span
                 layoutId="filter-pill"
-                className="absolute inset-0 -z-10 rounded-full bg-accent"
+                className="project-filter-tab__pill"
                 transition={{ type: 'spring', stiffness: 400, damping: 32 }}
               />
             )}
-            <span className="relative">{f}</span>
+            <span className="project-filter-tab__label">{f}</span>
           </button>
         ))}
       </Reveal>
@@ -155,7 +154,7 @@ export default function Projects() {
       {list.length > 0 && showcase.length > 0 && (
         <div className="mb-10 flex items-center gap-4">
           <span className="h-px flex-1 bg-line" />
-          <span className="text-xs uppercase tracking-[0.3em] text-white/40">More projects</span>
+          <span className="text-xs uppercase tracking-[0.3em] text-ink/40">More projects</span>
           <span className="h-px flex-1 bg-line" />
         </div>
       )}
@@ -175,19 +174,19 @@ export default function Projects() {
               <TiltCard max={7} className="h-full">
                 <article className={`glass glass-glow spotlight group flex h-full min-h-[230px] flex-col overflow-hidden p-6 ${p.featured ? 'md:min-h-[260px]' : ''}`}>
                   <div className="relative mb-6 flex items-start justify-between">
-                    <span className="font-display text-sm font-semibold text-white/30">{String(i + 1).padStart(2, '0')}</span>
+                    <span className="font-display text-sm font-semibold text-ink/30">{String(i + 1).padStart(2, '0')}</span>
                     {p.featured ? (
-                      <span className="flex items-center gap-1.5 rounded-full bg-accent px-3 py-1 text-[10px] font-semibold uppercase tracking-wider">
+                      <span className="flex items-center gap-1.5 rounded-full bg-accent px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-white">
                         <Icon name="sparkles" width={12} height={12} /> AI Powered
                       </span>
                     ) : (
-                      <span className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-white/50 transition-all group-hover:rotate-45 group-hover:border-accent group-hover:text-accent-soft">
+                      <span className="flex h-9 w-9 items-center justify-center rounded-full border border-line text-ink/50 transition-all group-hover:rotate-45 group-hover:border-accent group-hover:text-accent-soft">
                         <Icon name="arrow" width={16} height={16} className="-rotate-45" />
                       </span>
                     )}
                   </div>
                   <h3 className={`relative font-display font-bold leading-tight ${p.featured ? 'text-2xl md:text-3xl' : 'text-xl'}`}>{p.name}</h3>
-                  <p className="relative mt-3 flex-1 text-sm leading-relaxed text-white/55">{p.description}</p>
+                  <p className="relative mt-3 flex-1 text-sm leading-relaxed text-ink/55">{p.description}</p>
                   <div className="relative mt-5 flex flex-wrap gap-2">
                     {p.tech.map((t) => (
                       <span key={t} className="pill !py-1 !text-[11px]">
