@@ -8,6 +8,8 @@ export default defineConfig(({ command }) => ({
   base: command === 'build' ? '/web/' : '/',
   plugins: [react(), tailwindcss()],
   build: {
+    outDir: 'docs',
+    emptyOutDir: true,
     chunkSizeWarningLimit: 1500,
   },
 }))
